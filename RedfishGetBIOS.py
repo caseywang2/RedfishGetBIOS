@@ -36,7 +36,7 @@ def get_response(url):
             print('Received ' + str(response.status_code) + ' from ' + url)
             sys.exit()
         
-        
+  # handle 401 unauthorized and 404 page not found
 
 
 def get_bios_attributes():
@@ -89,7 +89,7 @@ if __name__ == "__main__":
 
     #data=get_response(f"https://192.168.200")
     #print (data)
-
+    #dell https://{ip}/redfish/v1
     data=get_response(f"https://{ip}/rest/v1")
     systems=data["Systems"]["@odata.id"]
     write_json("/rest/v1",data)
